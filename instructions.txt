@@ -1,0 +1,11 @@
+mkdir react-typescript-todo
+cd react-typescript-todo
+npm init -y
+mkdir react-typescript-todo
+cd react-typescript-todo
+npm init -y
+npm install react react-dom typescript @types/react @types/react-dom webpack webpack-cli ts-loader html-webpack-plugin webpack-dev-server --save-dev
+code .
+
+//if you want to install MUI
+npm install @mui/material @emotion/react @emotion/styled
