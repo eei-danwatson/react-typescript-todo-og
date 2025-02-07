@@ -8,7 +8,7 @@ module.exports = {
     filename: 'bundle.js', //Name of the output bundle
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.mjs'],
   },
   module: {
     rules: [
@@ -17,6 +17,11 @@ module.exports = {
         use: 'ts-loader', //Use ts-loader for those files
         exclude: /node_modules/,
       },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto'
+     }
     ],
   },
   plugins: [
@@ -27,5 +32,6 @@ module.exports = {
   devServer: {
     static: './dist',
     hot: true,
+    port: 8087,
   },
 };

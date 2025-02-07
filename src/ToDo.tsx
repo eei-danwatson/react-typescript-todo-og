@@ -1,10 +1,11 @@
 import React, { FC } from "react";
 
-interface Props {
+interface ToDoProps {
   text: string;
 }
 
-const ToDo: FC<Props> = ({ text }) => {
+
+const ToDo: FC<ToDoProps> = ({ text }) => {
   return <li>{text}</li>;
 };
 
