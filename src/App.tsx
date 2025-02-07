@@ -17,7 +17,7 @@ const App = () => {
 
   const addProject = () => {
     console.log("add project clicked");
-}
+  }
 
   return (
     <div>
