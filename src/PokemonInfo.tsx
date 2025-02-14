@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-// Define TypeScript interfaces for the data structures.
 interface PokemonSummary {
   name: string;
   url: string;
@@ -13,10 +12,6 @@ interface PokemonDetails {
   sprites: {
     front_default: string;
   };
-}
-
-const pokemonCardStyle = {
-  
 }
 
 const PokemonInfo: React.FC = () => {
@@ -33,13 +28,11 @@ const PokemonInfo: React.FC = () => {
   return (
     <div>
       <h1>Pokémon Cards</h1>
-      {/* Display loading or error state for the group of Pokémon */}
       {listLoading && <p>Loading Pokémon list...</p>}
       {listError && <p>Error: {listError}</p>}
       {/* Display the list of Pokémon fetched from the API */}
       
 
-      {/* Display loading or error state for the selected Pokemon */}
       {detailLoading && <p>Loading Pokémon details...</p>}
       {detailError && <p>Error: {detailError}</p>}
       {/* Display detailed info for the selected Pokémon */}
