@@ -4,7 +4,6 @@ interface ToDoProps {
   text: string;
 }
 
-
 const ToDo: FC<ToDoProps> = ({ text }) => {
   return <li>{text}</li>;
 };

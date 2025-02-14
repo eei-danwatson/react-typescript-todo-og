@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect, useMemo, useCallback } from "react";
-import { Button, TextField, Typography } from "@mui/material";
+import { Button, TextField, Typography, Paper, Box, Stack } from "@mui/material";
 import Todo from "./ToDo";
 import { Project } from "./Types";
 
@@ -25,35 +25,35 @@ const MuiProjects: FC = () => {
 
   return (
     <div style={{ padding: "1rem" }}>
-      <TextField
-        id="projectTitle"
-        label="Title"
-        variant="outlined"
-        value={newProject?.title || ""}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setNewProject({
-            ...newProject,
-            title: e.target.value,
-          } as Project)
-        }
-        style={{ display: "block", marginBottom: "1rem" }}
-      />
-
-      {/* Description */}
-      <TextField
-        id="projectDescription"
-        label="Description"
-        variant="outlined"
-        value={newProject?.description || ""}
-        onChange={(e: any) =>
-          setNewProject({
-            ...newProject,
-            description: e.target.value,
-          } as Project)
-        }
-        style={{ display: "block", marginBottom: "1rem" }}
-      />
-
+      <Stack spacing={2} direction='row'>
+          <TextField
+            id="projectTitle"
+            label="Title"
+            variant="outlined"
+            value={newProject?.title || ""}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setNewProject({
+                ...newProject,
+                title: e.target.value,
+              } as Project)
+            }
+            style={{ display: "block", marginBottom: "1rem" }}
+          />
+          {/* Description */}
+          <TextField
+            id="projectDescription"
+            label="Description"
+            variant="outlined"
+            value={newProject?.description || ""}
+            onChange={(e: any) =>
+              setNewProject({
+                ...newProject,
+                description: e.target.value,
+              } as Project)
+            }
+            style={{ display: "block", marginBottom: "1rem" }}
+          />
+      </Stack>
       {/* Action Items (comma separated) */}
       <TextField
         id="projectActionItems"
@@ -68,7 +68,6 @@ const MuiProjects: FC = () => {
         }
         style={{ display: "block", marginBottom: "1rem" }}
       />
-
       {/* Date Started */}
       <TextField
         id="projectDateStarted"
